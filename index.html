@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartment Website</title>
+    <!------------------------Font Awesome CDN------------------------------>
+    <script src="https://kit.fontawesome.com/30826f4714.js" crossorigin="anonymous"></script>
+    
+    <!-------------------Google Font CDN-------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <!-------------------Tailwind + DaisyUI CDN-------------->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .manrope-normal {
+        font-family: "Manrope", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        }
+    </style>
+    <!-----------------Tailwind CSS Config--------------->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+               'green-color': '#ABEF5F',
+               'offgreen-color': 'rgba(171, 239, 95, 0.5)',
+               'white-color': 'rgba(255, 255, 255, 1)',
+               'offwhite-color': 'rgba(255, 255, 255, 0)',
+               'black-color': 'rgba(33, 33, 33, 1)',
+               'button-black-color': 'rgba(28, 28, 28, 1)',
+               'gray-color': 'rgba(73, 73, 73, 1)',
+               'offgray-color': 'rgba(115, 115, 115, 1)',
+               'offwhite-bg': 'rgba(115, 115, 115, 1)',
+               'banner_color': '#f6f6f6',
+               'hero_color': '#f7f7f7',
+               'view_detail': '#d4f6ae',
+               'second_sec_color': '#f4f4f4',
+               'footer_color': '#1E1E1E',
+               'footer_content': '#E9E9E9',
+               'connect_color': '#eaeaea',
+
+              }
+             
+            }
+          }
+        }
+    </script>
+
+</head>
+
+<body class="font-manrope-normal">
+    <header class="pb-10 bg-gradient-to-b from-banner_color to-white-color">
+        <!-------------------------Navbar Design---------------------->
+        <nav class="pt-5 pb-4 w-full md:w-11/12 mx-auto">
+            <div class="navbar">
+              <!---------------------------------Navbar Start--------------------->
+                <div class="navbar-start">
+                  <a class="text-black-color text-3xl font-extrabold flex items-center justify-center">
+                   <div class="">
+                    <img class="bg-green-color rounded-full" width="30" height="30" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah.png" alt="external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah"/>
+                   </div>
+                    Rinterio
+                  </a>
+                </div>
+                <!---------------------Navbar Center---------------------->
+                <div class="navbar-center hidden lg:flex">
+                  <ul class="menu menu-horizontal px-1 text-md">
+                    <li class="text-gray-color font-extrabold"><a>Home</a></li>
+                    <li class="text-offgray-color"><a>Services</a></li>
+                    <li class="text-offgray-color"><a>Portfolio</a></li>
+                    <li class="text-offgray-color"><a>Blog</a></li>
+                    <li class="text-offgray-color"><a>Contact Us</a></li>
+                  </ul>
+                </div>
+                <!----------------------------Navbar End----------------------->
+                <div class="navbar-end gap-6 lg:gap-4">
+                    <!-----------------------Search Button-------------->
+                    <button class="btn btn-circle bg-white-color text-sm hidden md:flex">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-4 w-4"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                      </button>
+
+                    <!-----------------------Cart Button------------------------------>
+                    <div class="indicator bg-white-color hidden md:flex">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-7 w-7"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span class="badge badge-sm indicator-item">5</span>
+                      </div>
+
+                    <!-----------------------------Book Consult Button------------------>
+                   <div class="hidden md:flex items-center text-center">
+                    <button class="btn rounded-full btn-xs md:btn-md lg:btn-md bg-green-color">
+                      <a class="md:flex md:text-md lg:text-lg font-bold lg:gap-1">Book Consult
+                        <img class="rounded-full" width="25" height="25" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah.png" alt="external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah"/>
+                      </a>
+                    </button>
+                   </div>
+                   <!-----------------------------Hamburger Icon------------------->
+
+                   <div class="navbar lg:hidden">
+                    <div class="navbar-end">
+                      <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h7" />
+                          </svg>
+                        </div>
+                        <ul
+                          tabindex="0"
+                          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-md">
+                          <li class="text-gray-color font-extrabold"><a>Home</a></li>
+                          <li class="text-offgray-color"><a>Services</a></li>
+                          <li class="text-offgray-color"><a>Portfolio</a></li>
+                          <li class="text-offgray-color"><a>Blog</a></li>
+                          <li class="text-offgray-color"><a>Contact Us</a></li>
+                        </ul>
+                      </div>
+                    </div>
+        </nav>
+
+        <!---------------------------Hero Section Design---------------->
+        <div class="hero w-full">
+          <div class="hero-content flex-col">
+            <img
+              src="/assets/banner.png"
+              class="w-sm md:max-w-md"/>
+            <div class="w-8/12 items-cente justify-center text-center">
+              <h1 class="text-5xl font-bold">A barn house of this design has a <br> appearance</h1> 
+              <p class="py-6">
+                The barn house captivates with its blend of rustic charm and modern sophistication, featuring weathered wood, sleek metal accents, and large windows that flood the space with natural light.
+              </p>
+
+              <div class="flex items-center justify-center">
+                <button class="btn rounded-full btn-lg bg-offgreen-color">
+                  <a class="py-2 px-3 text-md md:text-lg font-bold gap-2 flex items-center justify-center">View Details
+                    <img class="bg-green-color rounded-full" width="30" height="30" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah.png" alt="external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah"/>
+                  </a>
+                </button>
+               </div>
+
+            </div>
+          </div>
+        </div>
+    </header>
+
+    
+    <main>
+        <!----------------------------About Us Section----------------->
+        <!---------------------------Small Button Content------------------>
+        <section class="pt-16 pb-24 bg-second_sec_color">
+          <div class="mx-auto w-full items-center justify-center md:mx-auto w-full">
+            <img class="ml-24" src="/assets/Vector.png" alt="">
+
+            <div class="ml-44">
+              <button class="btn rounded-full bg-white-color">
+                <a class="flex text-md font-semibold gap-1"><i class="fa-solid fa-arrow-right text-black-color text-md font-bold"></i>About Us
+                </a>
+              </button>
+            </div>
+          </div>
+         
+
+<!--------------------------------------------Hero Content and Image------------------>
+          <div class="hero w-full md:w-9/12 mx-auto w-full">
+           
+            <div class="hero-content flex-col lg:flex-row w-full">
+
+              <div>
+                <h1 class="text-4xl md:text-5xl font-bold pb-2 w-full">
+                  We design thoughtful, liveable spaces
+                </h1>
+                <p class="py-6">
+                  The barn house captivates with its blend of rustic charm and modern sophistication, featuring weathered wood, sleek metal accents.
+                </p>
+
+                 <!-----------------------------------Card Section------------------------->
+
+          <div class="space-y-5 w-full">
+            <div class="card card-side bg-base-100 shadow-xl w-11/12 pl-5">
+              <figure>
+                <img
+                  src="/assets/commercial.png"
+                  alt="" />
+              </figure>
+              <div class="card-body">
+                <h2 class="card-title">Commercial</h2>
+                <p>The barn house captivates with its blend 
+                  of rustic charm and modern</p>
+              </div>
+            </div>
+  
+  
+            <div class="card card-side bg-base-100 shadow-xl w-11/12 pl-5">
+              <figure>
+                <img
+                  src="/assets/residential.png"
+                  alt="" />
+              </figure>
+              <div class="card-body">
+                <h2 class="card-title">Commercial</h2>
+                <p>The barn house captivates with its blend 
+                  of rustic charm and modern</p>
+              </div>
+            </div>   
+          </div>   
+
+
+        </div>
+              <img
+                src="/assets/Rectangle.png"
+                class="max-w-md rounded-lg shadow-2xl" />
+
+            </div>
+          </div>
+<!--------------------------------------Countdown Section--------------------------------------->
+          <div class="pt-20">
+            <div class="card card-side bg-base-100 shadow-xl w-9/12 mx-auto py-12 px-2">
+             <div class="grid-cols-1 space-y-7 md:grid-cols-2 lg:flex items-center justify-items-center lg:gap-24 mx-auto">
+
+              <div class="text-center justify-items-center">
+                <i class="fa-regular fa-message text-offgray-color text-2xl"></i>
+                <h2 class="text-gray-color text-3xl font-bold ">235+</h2>
+                <p class="text-offgray-color text-lg font-semibold">Happy Client Review</p>
+              </div>
+
+              <div class="text-center justify-items-center">
+                <i class="fa-regular fa-building text-offgray-color text-2xl"></i>
+                <h2 class="text-gray-color text-3xl font-bold ">50+</h2>
+                <p class="text-offgray-color text-lg font-semibold">Work Departments</p>
+              </div>
+
+              <div class="text-center justify-items-center">
+                <i class="fa-solid fa-users text-offgray-color text-2xl"></i>
+                <h2 class="text-gray-color text-3xl font-bold ">30k+</h2>
+                <p class="text-offgray-color text-lg font-semibold">Our Happy Client</p>
+              </div>
+
+              <div class="text-center justify-items-center">
+                <i class="fa-solid fa-user-group text-offgray-color text-2xl"></i>
+                <h2 class="text-gray-color text-3xl font-bold ">307+</h2>
+                <p class="text-offgray-color text-lg font-semibold">Staff Members</p>
+              </div>
+
+             </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <!-----------------------------Our Works Process Section-------------->
+
+        <section class="bg-second_sec_color pb-24">
+          <div class="mx-auto">
+            <div class="work_butt text-center justify-items-center">
+              <button class="btn btn-md rounded-full bg-white-color">
+                <a class="flex text-md font-semibold gap-1"><i class="fa-solid fa-arrow-right text-black-color text-md font-bold"></i>How we works
+                </a>
+              </button>
+            </div>
+            <div class="text-center justify-items-center mx-auto pb-5 w-8/12">
+              <h2 class="text-black-color text-4xl font-bold pb-5">Our Works Process</h2>
+              <p class="text-black-color text-lg">The barn house captivates with its blend of rustic charm and modern sophistication, featuring weathered wood, sleek metal accents.</p>
+            </div>
+          </div>
+
+          <!--------------------------------Card Items------------------------->
+
+          <div class="mx-auto grid grid-cols-1 space-y-6 md:grid-cols-2 lg:flex justify-items-center lg:gap-5 lg:w-9/12 pt-4">
+          
+            <div class="card card-compact bg-base-100 flex-grow shadow-xl w-6/12 bg-[#E7C1D3]">
+              <div class="card-body pl-3">
+                <img class="w-4/12"
+                  src="/assets/concept.png"
+                  alt="" />
+                <h2 class="card-title font-semibold">Concept</h2>
+                <p>The barn house captivates with its blend of rustic charm and modern,
+                  ith its blend of rustic charm
+                </p>
+              </div>
+            </div>
+
+            <div class="card card-compact bg-base-100 flex-grow shadow-xl w-6/12 bg-[#EFDA6E]">
+              <div class="card-body pl-3">
+                <img class="w-4/12"
+                  src="/assets/flow-chart.png"
+                  alt="" />
+                <h2 class="card-title font-semibold">Design Process</h2>
+                <p>The barn house captivates with its blend of rustic charm and modern,
+                  ith its blend of rustic charm</p>
+              </div>
+            </div>
+
+            <div class="card card-compact bg-base-100 flex-grow shadow-xl w-6/12 bg-[#A4DAC3]">
+              <div class="card-body pl-3">
+                <img class="w-4/12"
+                  src="/assets/vision.png"
+                  alt="" />
+                <h2 class="card-title font-semibold">Supervision</h2>
+                <p>The barn house captivates with its blend of rustic charm and modern,
+                  ith its blend of rustic charm</p>
+              </div>
+            </div>
+
+            <div class="card card-compact bg-base-100 flex-grow shadow-xl w-6/12 bg-[#77AAEA]">
+              <div class="card-body pl-3">
+                <img class="w-4/12"
+                  src="/assets/budget-planning.png"
+                  alt="" />
+                <h2 class="card-title font-semibold">Budget Planning</h2>
+                <p>The barn house captivates with its blend of rustic charm and modern,
+                  ith its blend of rustic charm</p>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-------------------------Explore our Latest works-------------------->
+
+        <section class="bg-base-100 pt-24 pb-36">
+          <div class="bg-offwhite-color w-9/12 mx-auto">
+
+            <div class="mx-auto">
+              <div class="text-center justify-items-center">
+                <button class="btn btn-md rounded-full bg-second_sec_color">
+                  <a class="flex text-md font-semibold gap-1"><i class="fa-solid fa-arrow-right text-black-color text-md font-bold"></i>Explore our Latest works
+                  </a>
+                </button>
+              </div>
+              <div class="text-center justify-items-center mx-auto pb-5 w-8/12">
+                <h2 class="text-black-color text-4xl font-bold pb-5">Our Latest Portfolio</h2>
+                <p class="text-black-color text-lg">
+                  The barn house captivates with its blend of rustic charm and modern sophistication, featuring weathered wood, sleek metal accents.
+                </p>
+              </div>
+            </div>
+          </div>
+
+<!-----------------------------Card Items--------------------------->
+<!-----------------------First Row---------------------------->
+
+            <div class="bg-base-100 mx-auto mt-7 space-x-5 space-y-7 w-9/12 flex flex-col lg:flex-row">
+
+              <div class="card card-side flex-col md:flex-row shadow-2xl mx-auto justify-items-center w-full md:w-8/12 lg:w-11/12 pr-5">
+                <div class="w-11/12 ml-6 mt-8 lg:pl-3 lg:pt-2">
+                  <img src="/assets/img1.png" alt="">
+                </div>
+                <div class="card-body ml-0">
+                  <h3 class="card-title text-2xl text-gray-color">Commercial</h3>
+                  <p class="text-offgray-color pb-5">The barn house captivates with its blend of rustic charm and modern. The barn house captivates with its blend of rustic charm and modern .</p>
+                  <div class="flex">
+                    <button class="btn rounded-full btn-md bg-second_sec_color">
+                      <a class="py-2 px-3 text-md text-offgray-color font-bold gap-2 flex items-center justify-center">View Details
+                        <img class="bg-green-color rounded-full" width="22" height="22" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah.png" alt="external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah"/>
+                      </a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="card card-side bg-base-100 shadow-2xl pl-4 pr-4 pb-4 mx-auto md:w-9/12 lg:w-4/12">
+                <div class="w-11/12 md:w-9/12 lg:w-full mx-auto pt-6 lg:pt-12 lg:pl-3 lg:pr-3">
+                  <img
+                    src="/assets/img2.png"
+                    alt="" />
+                </div>
+              </div>
+            </div>
+
+<!-----------------------------------------Second Row---------------------------->
+
+                <div class="bg-base-100 mx-auto mt-7 space-x-5 space-y-7 lg:space-y-2 w-9/12 flex flex-col lg:flex-row">
+
+                  <div class="card card-side bg-base-100 shadow-2xl pl-4 pr-4 pb-4 mx-auto md:w-9/12 lg:w-4/12">
+                    <div class="w-11/12 md:w-9/12 lg:w-full mx-auto pt-6 lg:mt-12 lg:pl-3 lg:pr-3">
+                      <img
+                        src="/assets/img3.png"
+                        alt="" />
+                    </div>
+                  </div>
+
+                  <div class="card card-side flex-col md:flex-row shadow-2xl mx-auto justify-items-center w-full md:w-8/12 lg:w-11/12 pr-5">
+                    <div class="w-11/12 lg:w-full ml-6 mt-8 lg:pl-3 lg:pt-9">
+                      <img class="w-full" src="/assets/img4.png" alt="">
+                    </div>
+                    <div class="card-body ml-0">
+                      <h3 class="card-title text-2xl text-gray-color">Commercial</h3>
+                      <p class="text-offgray-color pb-5">The barn house captivates with its blend of rustic charm and modern. The barn house captivates with its blend of rustic charm and modern .</p>
+                      <div class="flex">
+                        <button class="btn rounded-full btn-md bg-second_sec_color">
+                          <a class="py-2 px-3 text-md text-offgray-color font-bold gap-2 flex items-center justify-center">View Details
+                            <img class="bg-green-color rounded-full" width="22" height="22" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah.png" alt="external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah"/>
+                          </a>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="card card-side bg-base-100 shadow-2xl pl-4 pr-4 pb-4 mx-auto md:w-9/12 lg:w-4/12">
+                    <div class="w-11/12 md:w-9/12 lg:w-full mx-auto pt-6 lg:mt-9 lg:pl-3 lg:pr-3">
+                      <img
+                        src="/assets/img5.png"
+                        alt="" />
+                    </div>
+                  </div>
+                </div>
+
+        </section>
+
+        <!-------------------------Read Our Articles and News----------------->
+        <section class="pb-24 pt-10 bg-connect_color mb-3">
+          <div class="flex">
+            <button class="btn rounded-full btn-md bg-second_sec_color mx-auto">
+              <a class="py-2 px-3 text-sm text-black-color gap-2 flex items-center justify-center">Rinterio News
+                <img class="bg-second_sec_color rounded-full" width="22" height="22" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah.png" alt="external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah"/>
+              </a>
+            </button>
+          </div>
+          <div class="mt-5">
+            <h2 class="mx-auto text-center text-2xl font-bold">Read Our Articles and News</h2>
+            <p class="text-center text-offgray-color mt-4 w-5/12 mx-auto pb-12">The barn house captivates with its blend of rustic charm and modern sophistication, featuring weathered wood, sleek metal accents.</p>
+          </div>
+          <!----------------------------------Card Ttems------------------>
+
+          <div class="mx-auto grid grid-cols-1 space-y-6 md:grid-cols-2 lg:flex justify-items-center lg:gap-5 lg:w-9/12 pt-4">
+          
+            <div class="card card-compact bg-base-100 flex-grow shadow-xl w-8/12">
+              <div class="card-body pl-3 pt-5">
+                <img class="w-full"
+                  src="/assets/article1.png"
+                  alt="" />
+                  <div class="flex space-x-5 mt-5">
+                    <h4><i class="fa-solid fa-calendar-days mr-2"></i>July14, 2024</h4>
+                    <h4><i class="fa-solid fa-user mr-2"></i>By Admin</h4>
+                  </div>
+                <h2 class="card-title font-semibold mt-2">How to choose the furniture right  of your home.</h2>
+                <p>The barn house captivates with its blend of rustic charm and modern. 
+                </p>
+                <div class="flex">
+                  <button class="btn rounded-full btn-md bg-second_sec_color">
+                    <a class="py-2 px-3 text-md text-offgray-color font-bold gap-2 flex items-center justify-center">Read More
+                      <img class="bg-green-color rounded-full" width="22" height="22" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah.png" alt="external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah"/>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card card-compact bg-base-100 flex-grow shadow-xl w-8/12">
+              <div class="card-body pl-3 pt-8">
+                <img class="w-full"
+                  src="/assets/article2.png"
+                  alt="" />
+                  <div class="flex space-x-5 mt-5">
+                    <h4><i class="fa-solid fa-calendar-days mr-2"></i>July14, 2024</h4>
+                    <h4><i class="fa-solid fa-user mr-2"></i>By Admin</h4>
+                  </div>
+                <h2 class="card-title font-semibold mt-2">How to choose the furniture right  of your home.</h2>
+                <p>The barn house captivates with its blend of rustic charm and modern. 
+                </p>
+                <div class="flex">
+                  <button class="btn rounded-full btn-md bg-second_sec_color">
+                    <a class="py-2 px-3 text-md text-offgray-color font-bold gap-2 flex items-center justify-center">Read More
+                      <img class="bg-green-color rounded-full" width="22" height="22" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah.png" alt="external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah"/>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card card-compact bg-base-100 flex-grow shadow-xl w-8/12">
+              <div class="card-body pl-3 pt-5">
+                <img class="w-full"
+                  src="/assets/article3.png"
+                  alt="" />
+                  <div class="flex space-x-5 mt-5">
+                    <h4><i class="fa-solid fa-calendar-days mr-2"></i>July14, 2024</h4>
+                    <h4><i class="fa-solid fa-user mr-2"></i>By Admin</h4>
+                  </div>
+                <h2 class="card-title font-semibold mt-2">How to choose the furniture right  of your home.</h2>
+                <p>The barn house captivates with its blend of rustic charm and modern. 
+                </p>
+                <div class="flex">
+                  <button class="btn rounded-full btn-md bg-second_sec_color">
+                    <a class="py-2 px-3 text-md text-offgray-color font-bold gap-2 flex items-center justify-center">Read More
+                      <img class="bg-green-color rounded-full" width="22" height="22" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah.png" alt="external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah"/>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+
+        </section>
+
+        <!--------------------------------------Unique Section--------------------->
+
+        <section class="pb-36 pt-24 bg-connect_color mb-5">
+          <div class="hero min-h-screen w-full"
+                style="background-image: url(/assets/homeus.jpg);">
+                <div class="hero-overlay bg-opacity-60"></div>
+                <div class="hero-content text-neutral-content text-center">
+                  <div class="max-w-md">
+                    <h1 class="mb-5 text-5xl font-bold">Great Price Offered <br> 
+                      For You</h1>
+                  </div>
+                </div>
+            </div>
+
+            <h3 class="mx-auto text-center pt-24 text-black-color text-3xl font-bold">
+              Our Subscription
+            </h3>
+
+            <!-----------------------------Subscrition Items---------------->
+
+            <div class="mx-auto grid grid-cols-1 space-y-6 md:grid-cols-2 lg:flex justify-items-center lg:gap-5 lg:w-9/12 pt-5">
+              <div class="card card-compact bg-base-100 flex-grow shadow-xl w-9/12">
+
+                <div class="card-body pl-6 pt-8 mt-0">
+                  <h2 class="text-3xl font-bold ml-2">$20 / Month</h2>
+                  <h2 class="card-title text-2xl font-semibold mt-2 ml-2">Intro</h2>
+                  <p class="ml-2">Join us every month for a very reasonable price.</p>
+                  <ul class="menu  w-56 p-0 [&_li>*]:rounded-none mt-0 pt-0">
+                  
+                    <li><a><a><i class="fa-solid fa-arrow-up-right-from-square text-primary text-gray-color"></i>Transportation for you</a></li>
+                    <li><a><a><i class="fa-solid fa-arrow-up-right-from-square text-primary text-gray-color"></i>A Hotel or Homestay</a></li>
+                    <li><a><a><i class="fa-solid fa-arrow-up-right-from-square text-primary text-gray-color"></i>Free meals and drinks</a></li>
+                    <li><a><a><i class="fa-solid fa-arrow-up-right-from-square text-primary text-gray-color"></i>24/7 Support</a></li>
+                    <li><a><a><i class="fa-solid fa-arrow-up-right-from-square text-primary text-gray-color"></i>Unlimited Users</a></li> 
+                   
+                  </ul>
+                  <div class="flex pt-2 mx-auto">
+                    <button class="btn rounded-full btn-md bg-second_sec_color">
+                      <a class="py-2 px-3 text-md text-offgray-color font-bold gap-2 flex items-center justify-center">Read More
+                        <img class="bg-green-color rounded-full" width="22" height="22" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah.png" alt="external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah"/>
+                      </a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+          
+             
+              
+              <div class="card card-compact bg-base-100 flex-grow shadow-xl w-9/12">
+
+                <div class="card-body pl-6 pt-8">
+                  <h2 class="text-3xl font-bold ml-2">$99 / Month</h2>
+                  <h2 class="card-title text-2xl font-semibold mt-2 ml-2">Pro</h2>
+                  <p class="ml-2">Join us every month for a very reasonable price.</p>
+                  <ul class="menu  w-56 p-0 [&_li>*]:rounded-none">
+                  
+                    <li><a><a><i class="fa-solid fa-arrow-up-right-from-square text-primary text-gray-color"></i>Transportation for you</a></li>
+                    <li><a><a><i class="fa-solid fa-arrow-up-right-from-square text-primary text-gray-color"></i>A Hotel or Homestay</a></li>
+                    <li><a><a><i class="fa-solid fa-arrow-up-right-from-square text-primary text-gray-color"></i>Free meals and drinks</a></li>
+                    <li><a><a><i class="fa-solid fa-arrow-up-right-from-square text-primary text-gray-color"></i>24/7 Support</a></li>
+                    <li><a><a><i class="fa-solid fa-arrow-up-right-from-square text-primary text-gray-color"></i>Unlimited Users</a></li> 
+                   
+                  </ul>
+                  <div class="flex pt-2 mx-auto">
+                    <button class="btn rounded-full btn-md bg-second_sec_color">
+                      <a class="py-2 px-3 text-md text-offgray-color font-bold gap-2 flex items-center justify-center">Read More
+                        <img class="bg-green-color rounded-full" width="22" height="22" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah.png" alt="external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah"/>
+                      </a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div class="card card-compact bg-base-100 flex-grow shadow-xl w-9/12">
+
+                <div class="card-body pl-6 pt-8">
+                  <h2 class="text-3xl font-bold ml-2">$200 / Month</h2>
+                  <h2 class="card-title text-2xl font-semibold mt-2 ml-2">Enterprise</h2>
+                  <p class="ml-2">Join us every month for a very reasonable price.</p>
+                  <ul class="menu  w-56 p-0 [&_li>*]:rounded-none">
+                  
+                    <li><a><a><i class="fa-solid fa-arrow-up-right-from-square text-primary text-gray-color"></i>Transportation for you</a></li>
+                    <li><a><a><i class="fa-solid fa-arrow-up-right-from-square text-primary text-gray-color"></i>A Hotel or Homestay</a></li>
+                    <li><a><a><i class="fa-solid fa-arrow-up-right-from-square text-primary text-gray-color"></i>Free meals and drinks</a></li>
+                    <li><a><a><i class="fa-solid fa-arrow-up-right-from-square text-primary text-gray-color"></i>24/7 Support</a></li>
+                    <li><a><a><i class="fa-solid fa-arrow-up-right-from-square text-primary text-gray-color"></i>Unlimited Users</a></li> 
+                   
+                  </ul>
+                  <div class="flex pt-2 mx-auto">
+                    <button class="btn rounded-full btn-md bg-second_sec_color">
+                      <a class="py-2 px-3 text-md text-offgray-color font-bold gap-2 flex items-center justify-center">Read More
+                        <img class="bg-green-color rounded-full" width="22" height="22" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah.png" alt="external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah"/>
+                      </a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+
+        </section>
+
+        <!--------------------------Let’s Discuss Next Project----------------->
+
+        <section class="pb-24 pt-24 bg-connect_color">
+         
+          <div class="flex">
+            <button class="btn rounded-full btn-md bg-second_sec_color mx-auto">
+              <a class="py-2 px-3 text-sm text-black-color gap-2 flex items-center justify-center">Let’s Connect
+                <img class="bg-second_sec_color rounded-full" width="22" height="22" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah.png" alt="external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah"/>
+              </a>
+            </button>
+          </div>
+          <div class="mt-5">
+            <h2 class="mx-auto text-center text-2xl font-bold">Let’s Discuss Next Project</h2>
+            <p class="text-center text-offgray-color mt-4 w-6/12 mx-auto pb-12">The barn house captivates with its blend of rustic charm and modern sophistication, featuring weathered wood, sleek metal accents.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 space-y-2 w-full md:w-9/12">
+            
+             
+            <div class="w-10/12 ml-9 md:ml-48 ">
+              <label class="input input-bordered rounded-full flex items-center gap-2">
+                <input type="text" class="" placeholder="First Name*" />
+              </label>  
+            </div>
+      
+             <div class="w-10/12 ml-9 md:ml-32">
+              <label class="input input-bordered rounded-full flex items-center gap-2">
+                <input type="text" class="" placeholder="Last Name*" />
+              </label>
+             </div>
+      
+             <div class="w-10/12 ml-9 md:ml-48">
+              <label class="input input-bordered rounded-full flex items-center gap-2">
+                <input type="number" class="grow" placeholder="Phone Number*" />
+              </label>
+             </div>
+      
+              <div class="ml-9 md:ml-32 w-10/12">
+                <label class="input input-bordered rounded-full flex items-center gap-2">
+                  <input type="text" class="grow" placeholder="Email*" />
+                </label>
+              </div>
+          </div>
+
+          <div class="ml-7 mr-7  md:ml-24 md:mr-24 mt-4">
+            <textarea
+          placeholder="Write Your Message Here"
+          class="textarea textarea-bordered textarea-lg w-full md:w-9/12 md:ml-24 md:mr-16 lg:ml-24 lg:mt-4"></textarea>
+          </div>
+
+          <div class="flex items-center justify-center rounded-lg">
+            <button class="btn rounded-full btn-md bg-offgreen-color pl-24 pr-24 md:pl-72 md:pr-72 md:mr-16 mt-5">
+              <a class="py-2 px-3 text-md md:text-md font-bold gap-2 flex items-center justify-center">Send Mail
+                <img class="bg-green-color rounded-full" width="22" height="22" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah.png" alt="external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah"/>
+              </a>
+            </button>
+           </div>
+
+        </section>
+
+        
+
+    </main>
+
+   <!-----------------------------------Footer Section--------------------->
+   
+   <footer class="footer footer-center bg-footer_color text-footer_content rounded p-10 w-full">
+
+    <div class="footer_icon pt-3 w-full">
+      <a class="text-footer_content text-2xl font-semibold flex items-center justify-center">
+       <div class="">
+        <img class="bg-green-color rounded-full" width="22" height="22" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah.png" alt="external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah"/>
+       </div>
+        Rinterio
+      </a>
+      <div>
+        <p class="text-offgray-color text-center mx-auto pt-6 text-md w-9/12">The barn house captivates with its blend of rustic charm and modern sophistication, featuring weathered wood, sleek metal accents.</p>
+      </div>
+    </div>
+
+  <nav class="grid grid-cols md:grid-flow-col mx-auto justify-items-center text-center text-offgray-color space-x-36">
+    <div class="mx-auto justify-items-center grid grid-cols-1 grid-cols-4">
+      <a class="link link-hover">Home</a>
+      <a class="link link-hover">Services</a>
+      <a class="link link-hover">Portfolio</a>
+      <a class="link link-hover">Contact Us</a>
+    </div>
+  </nav>
+
+  <div class="flex">
+    <button class="btn rounded-full btn-md bg-green-color">
+      <a class="py-2 px-3 text-md text-black-color font-bold gap-2 flex items-center justify-center">Book Consult
+        <img class="bg-white-color rounded-full" width="22" height="22" src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah.png" alt="external-arrow-upper-right-arrows-tanah-basah-basic-outline-tanah-basah"/>
+      </a>
+    </button>
+  </div>
+
+  <hr class="text-gray-color w-10/12 text-center">
+  </footer>
+
+</body>
+</html>
